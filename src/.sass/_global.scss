@@ -1,0 +1,200 @@
+
+//GLOBAL COLORS
+
+//warranty i, p, master i
+
+
+a, button, input, textarea {
+    &:focus,
+    &:active {
+        outline: none !important;
+    }
+}
+
+body {
+    position: relative;
+    @media all and (max-width: $screen-tablet) {
+        font-size: 12px;
+    }
+    @media all and (max-width: $screen-phone) {
+        font-size: 10px;
+        h1 {
+            font-size: floor(($font-size-base * 1.8));
+        }
+        h2 {
+            font-size: floor(($font-size-base * 1.6));
+        }
+        h3 {
+            font-size: ceil(($font-size-base * 1.1));
+        }
+        h4 {
+            font-size: $font-size-base;
+        }
+        h5 {
+            font-size: ceil(($font-size-base * .9));
+        }
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.color-white {
+    color: #ffffff;
+}
+
+.color-black {
+    color: #000000;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.spacer {
+    font-size: 1px;
+    &.quad {
+        padding-top: 100%;
+    }
+}
+
+
+//ACTION COUNTER FORM
+
+
+//GLOBAL CAROUSEL
+
+
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+        }
+
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    .carousel-control {
+        z-index: 2;
+    }
+}
+
+
+
+.form-feedback {
+    background-color: white;
+    padding: 2em 2em .5em;
+    &.production-modal-form {
+        @media (min-width: $screen-lg-min) {
+            padding-left: 0;
+        }
+    }
+    &.staff-form {
+        background-color: transparent;
+        padding: 0;
+    }
+    input[type="text"], button[type="submit"] {
+        height: 3em;
+    }
+    input[type="text"], button[type="submit"], textarea {
+        font-size: 1.1em;;
+        border: 1px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 1em;
+    }
+    input[type="text"], textarea {
+        width: 100%;
+        border: 1px solid lightgray;
+        &:active,
+        &:focus {
+            border-color: $brand-danger;
+        }
+    }
+    button[type="submit"] {
+        float: right;
+    }
+    textarea {
+        resize: none;
+        padding: 10px 16px;
+    }
+    .header-form {
+        margin: 0 0 1em;
+    }
+}
+
+.production-modal-form {
+    .heading {
+
+    }
+    .heading2, .heading, .phone-heading{
+        text-align: center;
+    }
+    .heading2{
+        font-size: 1.4em;
+        margin-bottom: .8em;
+    }
+    .heading, .phone-heading, .heading2 {
+        font-weight: bold;
+    }
+    .phone-heading, .heading2 {
+        font-size: 2em;
+        line-height: 1;
+    }
+    .heading, .check-list {
+        font-size: 1.2em;
+    }
+    .fa-phone{
+        margin-right: 10px;
+    }
+    .check-list{
+        padding-left: 30px;
+        position: relative;
+        &::before{
+            content:"\f00c";
+            font-family: 'FontAwesome', serif;
+            position: absolute;
+            left: 0;
+            color: $brand-danger;
+        }
+    }
+
+    button[type="submit"] {
+        float: none;
+        width: 100%;
+    }
+}
+
+.little-less {
+    font-size: 95%;
+}
+
+.animated {
+    opacity: 0;
+    &.visible {
+        opacity: 1;
+    }
+}

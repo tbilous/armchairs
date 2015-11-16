@@ -1,0 +1,6 @@
+/dist
+archive
+node_modules
+/bower_components
+/test
+.idea

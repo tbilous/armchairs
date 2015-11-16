@@ -1,0 +1,23 @@
+{
+  "name": "Armchairs-layout",
+  "description": "Michel's salon markup",
+  "main": "gulpfile.js",
+  "authors": [
+    "Taras Bilous <tbilous@yahoo.com>"
+  ],
+  "license": "MTI",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "moment": "~2.10.6",
+    "flipclock": "~0.7.7"
+  }
+}
