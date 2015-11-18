@@ -1,4 +1,183 @@
 //Block1 - Header
-.header{
+.header {
+    .top-header-block {
+        padding: 1em 0 0;
+    }
+    .logo {
+        height: 5em;
+        width: 17em;
+        background: url("../img/logo.png") no-repeat;
+        background-size: contain;
+        margin-left: 1em;
+
+    }
+    .heading {
+        margin-left: 5%;
+        padding-left: 8%;
+        border-left: 2px solid $border-color;
+        @media (max-width: $container-large-desktop) {
+            border-left: none;
+        }
+    }
+    .contact-top {
+        li {
+            &:nth-child(1),
+            &:nth-child(2) {
+                letter-spacing: 2px;
+                font-size: 1.2em;
+            }
+
+            .start-modal {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+            @media (max-width: $screen-lg-min) and (min-width: $screen-sm-max) {
+                &:nth-child(1),
+                &:nth-child(2) {
+                    letter-spacing: normal;
+                    font-size: 1.2em;
+                    .start-modal {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: $container-desktop) {
+        .top-header-block {
+            padding-left: 0;
+        }
+        .contact-top {
+            ul {
+                padding-left: 0;
+            }
+            text-align: center;
+            li {
+                display: inline-block;
+                padding: 5px;
+            }
+        }
+        .heading {
+            padding-left: 0;
+            text-align: center;
+        }
+        .heading, .logo, .contact-top {
+            margin: .5em auto;
+        }
+    }
+}
+
+.main-header {
+    min-height: 550px;
+    background: url("../img/header-bg-hires.jpg") no-repeat center top;
+    background-size: contain;
+    .top-callback-wrapper {
+        margin-top: 5em;
+    }
+}
+
+.form {
+    max-width: 360px;
+    padding: 1.5em;
+    background-color: $form-bg;
+    .header-form {
+        font-size: 2em;
+        color: white;
+    }
+    input {
+        width: 100%;
+        height: 3.5em;
+        border: 1px;
+    }
+    input[type='text'] {
+        border: 1px solid $border-color;
+        padding-left: 1em;
+        color: $input-color-my;
+    }
+    .input-group {
+        margin-bottom: 1em;
+
+    }
+    .clock {
+        min-height: 150px;
+    }
+    @media (max-width: $container-large-desktop) {
+        margin: 0 auto;
+    }
+}
+
+.clock-wrapper {
+    text-align: center;
+    padding: .5em 0;
+    min-height: 150px;
+    .clock-header {
+        color: $brand-primary;
+        font-size: 1.2em;
+    }
+    .clock {
+    }
+    background-color: lightcyan;
+    @media (max-width: $screen-md-min) {
+        margin: 0 auto;
+    }
+    @media (max-width: $container-large-desktop) {
+        margin: 0 auto;
+    }
+}
+
+.action-wrapper {
+    padding-top: 2em;
+    margin-left: 2em;
+    padding-left: 1em;
+    position: relative;
+    .action-ribbon {
+        background: url("../img/hoover-rebbon.png") no-repeat left top;
+        width: 100%;
+        z-index: 10;
+        height: 5em;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+    .hoover {
+        width: 193px;
+        height: 150px;
+        top: 50%;
+        margin-top: -81px;
+        left: 150px;
+        background: url("../img/hoover.png");
+        position: absolute;
+        z-index: 20;
+        @media (max-width: $screen-md-min) and (min-width: $screen-sm-max) {
+            margin-left: -120px;
+        }
+    }
+}
+
+.action-text {
+    max-width: 150px;
+    background-color: rgba(245, 214, 180, .6);
+    padding: 30px 13px 13px;
+    border-radius: .5em;
+    small {
+        font-size: 9px
+    }
+}
+
+.hoover-header {
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 11px;
+
+    .line-dot {
+        padding: 0 0 8px;
+        background: url("../img/line-dot.png") left center no-repeat;
+        display: block;
+        min-width: 190px;
+        position: absolute;
+        bottom: 0;
+        z-index: 30;
+    }
 
 }

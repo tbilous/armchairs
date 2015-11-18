@@ -15,7 +15,11 @@ var pkg = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
 var minifyCss = require('gulp-minify-css');
+var uglify = require('gulp-uglifyjs');
 var rename = require('gulp-rename');
+var imagemin = require('gulp-imagemin');
+
+
 var mainStylesheet = 'style';
 
 // ---------------------------------------------------------------------
@@ -69,14 +73,15 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('copy', [
-    'minify-css',
+    'copy:uglify',
     'copy:.htaccess',
     'copy:index.html',
     'copy:jquery',
     'copy:license',
-    'copy:main.css',
+    'copy:images',
+    // 'copy:main.css',
+    // 'minify-css',
     'copy:misc'
-    // 'copy:normalize'
 ]);
 
 gulp.task('copy:.htaccess', function () {
@@ -88,7 +93,7 @@ gulp.task('copy:.htaccess', function () {
 gulp.task('copy:index.html', function () {
     return gulp.src(dirs.src + '/index.html')
         .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
-        .pipe(plugins.replace(/{{MAIN_CSS_FILE}}/g, mainStylesheet + '.min.css'))
+        .pipe(plugins.replace(/{{MAIN_JS_FILE}}/g, 'main.js'))
         .pipe(plugins.replace(/{{CUT-START}}(.|\n)+?{{CUT-END}}/gm, ''))
         .pipe(gulp.dest(dirs.dist));
 });
@@ -118,11 +123,33 @@ gulp.task('copy:main.css', function () {
         }));
 });
 
-gulp.task('minify-css', function () {
+gulp.task('copy:minify-css', function () {
     return gulp.src(dirs.src + '/css/*.css')
         .pipe(minifyCss())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist' + '/css/'));
+});
+
+gulp.task('copy:uglify', function() {
+    return gulp.src([
+            dirs.src + '/assets/js/*.js',
+            '!' + dirs.src + '/assets/js/' + mainStylesheet + '*.min.js'
+        ])
+
+        .pipe(uglify('main.js', {
+            outSourceMap: false
+        }))
+        .pipe(gulp.dest('dist' + '/js/'));
+});
+
+gulp.task('copy:images', function() {
+    return gulp.src(dirs.src + '/img/**/*.{gif,jpg,png}')
+        .pipe(imagemin({
+            progressive: true,
+            interlaced: true,
+            svgoPlugins: [{ removeViewBox:false }, { removeUselessStrokeAndFill:false }]
+        }))
+        .pipe(gulp.dest('dist' + '/img'));
 });
 
 gulp.task('copy:misc', function () {
@@ -130,10 +157,11 @@ gulp.task('copy:misc', function () {
 
         // Copy all files
         dirs.src + '/**/*',
-
         // Exclude the following files
         // (other tasks will handle the copying of these files)
-        '!' + dirs.src + '/css/' + mainStylesheet + '.min.css',
+        // '!' + dirs.src + '/css/' + mainStylesheet + '.min.css',
+        '!' + dirs.src + '/assets/js/*.js',
+        '!' + dirs.src + '/img/**/*',
         '!' + dirs.src + '/index.html'
 
     ], {
@@ -154,7 +182,7 @@ gulp.task('copy:misc', function () {
 gulp.task('lint:js', function () {
     return gulp.src([
         'gulpfile.js',
-        dirs.src + '/js/*.js',
+        dirs.src + '/js/plugin.js',
         dirs.test + '/*.js'
     ]).pipe(plugins.jscs())
         .pipe(plugins.jshint({

@@ -9,13 +9,10 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 
-    <!--{{CUT-START}}-->
+
     <link rel="stylesheet" href="css/style.css">
-    <!--{{CUT-END}}-->
-
-
-    <link rel="stylesheet" href="css/{{MAIN_CSS_FILE}}">
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -26,34 +23,621 @@
 <![endif]-->
 
 <header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6"></div>
-            <div class="col-sm-6">
-                <div class="callback-wrapper">
-                    <div class="form top-form text-center" id="topForm">
-                        <div class="header-form text-uppercase">
-                            Заказать и получить в подарок пылесос
-                        </div>
-                        <input type="hidden" name="head" value="Top form">
-                        <div class="input-group">
-                            <input type="text" name="name" required placeholder="Ваше имя">
-                        </div>
-                        <div class="input-group"></div>
-                        <input type="text" name="phone" required placeholder="Ваш телефон">
-                        <div class="input-group">
-                            <input type="submit" class="btn btn-lg btn-danger">
-                        </div>
-                        <div class="input-group"></div>
+    <div class="top-header-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="logo"></div>
+                </div>
+                <div class="col-md-5">
+                    <h3 class="heading text-uppercase">
+                        ЛУЧШИЕ В УКРАИНЕ<br/>
+                        массажные кресла<br/>
+                        продаются здесь!<br/>
+                    </h3>
+                </div>
+                <div class="col-md-3">
+                    <div class="contacts contact-top">
+                        <ul class="no-list-style">
+                            <li class="text-nowrap">+38 (066) 221 30 66</li>
+                            <li class="text-nowrap">+38 (068) 861 22 83</li>
+                            <li>
+                                <button class="btn btn-md btn-clear start-modal">ЗАКАЗАТЬ ЗВОНОК</button>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="ribbon"></div>
+    <div class="container">
+        <div class="main-header">
+
+            <div class="row">
+                <div class="col-md-7 hidden-sm hidden-xs"></div>
+                <div class="col-md-5">
+                    <div class="top-callback-wrapper">
+                        <form class="form top-form text-center" id="topForm">
+                            <div class="header-form text-uppercase">
+                                Заказать сейчас
+                                и получить пылесос
+                                в подарок
+                            </div>
+                            <input type="hidden" name="head" value="Top form">
+
+                            <div class="input-group">
+                                <input type="text" name="name" required placeholder="Ваше имя">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="phone" required placeholder="Ваш телефон">
+                            </div>
+
+                            <div class="input-group">
+                                <input type="submit" class="btn btn-md btn-warning">
+                            </div>
+                            <div class="input-group"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="action-wrapper">
+                        <div class="action-ribbon"></div>
+                        <div class="action-text">
+                            <div class="hoover-header">
+                                <span class="text-uppercase color-brand bold">новинка 2015</span>
+
+                                <div class="line-dot"></div>
+                            </div>
+
+                            <small>
+                                Робот пылесос ТТ80
+                                станет незаменимым
+                                помощником и хранителем чистоты вашего дома.
+                            </small>
+                        </div>
+                        <div class="hoover"></div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="clock-wrapper">
+                        <span class="clock-header">До конца акции осталось:</span>
+
+                        <div class="clock top-clock" id="topClock"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
 </header>
-<!-- Add your site or application content here -->
-<p>Hello world! This is HTML5 Boilerplate.</p>
+<div class="block block2">
+    <div class="block-bg block-2-bg"></div>
+    <div class="container">
+        <h2 class="bold text-uppercase chair-header">Массажное кресло Tai ji</h2>
+
+        <div class="row">
+            <div class="col-sm-6 col-xs-7">
+                <ul class="block2-list">
+                    <li>Планшет для управления креслом</li>
+                    <li>Уникальная роликовая система из 6-ти роликов</li>
+                    <li>Роликовый массаж икр</li>
+                    <li>Воздушно-компрессионный массаж</li>
+                    <li>Динамики, возможность слушать музыку</li>
+                    <li>Инфракрасный прогрев роликов</li>
+                    <li>Нулевая гравитация</li>
+                    <li>LW –образный массажный механизм</li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-sm-6 col-xs-5">
+                <div class="rating text-right">
+                    <img class="stars" src="img/five-star.png" alt="rating five stars">
+                </div>
+                <div class="chair-photo">
+                    <img class="img-responsive" src="img/chair-tai_ji.png" alt="Tai Ji armchair">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="order order-block-2 bottom-line">
+    <div class="container">
+        <div class="order-group text-center">
+            <div class="price-group">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="price btn-lg">
+                                <del>317 000 грн</del>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="price new btn-lg btn-warning">
+                                294 000 грн
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-lg btn-clear order-button">ЗАКАЗАТЬ</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="block block3">
+    <div class="block-bg block-3-bg"></div>
+    <div class="container relative">
+        <h2 class="bold text-uppercase chair-header">Массажное кресло RIO</h2>
+
+        <div class="row">
+            <div class="col-sm-6 col-xs-5">
+                <div class="rating text-left">
+                    <img class="stars" src="img/four-star.png" alt="rating four stars">
+                </div>
+                <div class="chair-photo">
+                    <img class="img-responsive" src="img/chair-rio_blk.png" alt="Tai Ji armchair">
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-7">
+                <ul class="block2-list">
+                    <li>Роликовый механизм длинной 120 см <br>
+                        (роликовый механизм заезжает и под ягодицы)
+                    </li>
+                    <li>Одно из немногих кресел, которые делают вытягивание</li>
+                    <li>Сканирование тела</li>
+                    <li>Режим нулевой гравитации</li>
+                    <li>Воздушно-компрессионный массаж</li>
+                    <li>Музыка</li>
+                    <li>LS-образный массажный механизм</li>
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="order order-block-3 bottom-line">
+    <div class="container relative">
+        <div class="order-group text-center pull-right">
+            <div class="price-group">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="price btn-lg">
+                                <del>73 000 грн</del>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="price new btn-lg btn-warning">
+                                61 000 грн
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-lg btn-clear order-button">ЗАКАЗАТЬ</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="block block4">
+    <div class="block-bg"></div>
+    <div class="container">
+        <h2 class="bold text-uppercase chair-header">Массажное кресло CALIFORNIA С</h2>
+
+        <div class="row">
+            <div class="col-sm-6 col-xs-7">
+                <ul class="block2-list">
+                    <li>Планшет для управления креслом</li>
+                    <li>Уникальная роликовая система из 6-ти роликов</li>
+                    <li>Роликовый массаж икр</li>
+                    <li>Воздушно-компрессионный массаж</li>
+                    <li>Динамики, возможность слушать музыку</li>
+                    <li>Инфракрасный прогрев роликов</li>
+                    <li>Нулевая гравитация</li>
+                    <li>LW –образный массажный механизм</li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-sm-6 col-xs-5">
+                <div class="rating text-right">
+                    <img class="stars" src="img/tree-star.png" alt="rating five stars">
+                </div>
+                <div class="chair-photo">
+                    <img class="img-responsive" src="img/chair-california.png" alt="California armchair">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="order order-block-4">
+    <div class="container">
+        <div class="order-group text-center">
+            <div class="price-group">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="price btn-lg">
+                                <del>42 900 грн</del>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="price new btn-lg btn-warning">
+                                34 700 грн
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-lg btn-clear order-button">ЗАКАЗАТЬ</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="why top-line">
+    <h2 class="color-brand text-center text-uppercase block-header bold">почему стоит заказать
+        массажное кресло именно у нас?</h2>
+
+    <div class="container">
+        <div class="section-body">
+            <ul class="list-inline text-center">
+                <li>
+                    <div class="icon watch"></div>
+                    <span class="text-uppercase">
+                        более 8 лет <br> на рынке
+                    </span>
+                </li>
+                <li>
+                    <div class="icon service"></div>
+                    <span class="text-uppercase">
+                        наличие своего <br>
+сервисного центра
+                    </span>
+                </li>
+
+                <li>
+                    <div class="icon finger"></div>
+                    <span class="text-uppercase">
+                        возможность теста <br>
+в нашем шоуруме
+                    </span>
+                </li>
+                <li>
+                    <div class="icon cert"></div>
+                    <span class="text-uppercase">
+                        сертифицированная <br>
+продукция
+                    </span>
+                </li>
+                <li>
+                    <div class="icon track"></div>
+                    <span class="text-uppercase">
+                        Бесплатная доставка  <br> по всей украине
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="action-wrapper">
+                        <div class="action-ribbon"></div>
+                        <div class="action-text">
+                            <div class="hoover-header">
+                                <span class="text-uppercase color-brand bold">новинка 2015</span>
+
+                                <div class="line-dot"></div>
+                            </div>
+
+                            <small>
+                                Робот пылесос ТТ80
+                                станет незаменимым
+                                помощником и хранителем чистоты вашего дома.
+                            </small>
+                        </div>
+                        <div class="hoover"></div>
+                    </div>
+                    <div class="clock-wrapper">
+                        <span class="clock-header">До конца акции осталось:</span>
+
+                        <div class="clock top-clock" id="bottomClock"></div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="top-callback-wrapper">
+                        <form class="form top-form text-center" id="bottomForm">
+                            <div class="header-form text-uppercase">
+                                Заказать сейчас
+                                и получить пылесос
+                                в подарок
+                            </div>
+                            <input type="hidden" name="head" value="Top form">
+
+                            <div class="input-group">
+                                <input type="text" name="name" required placeholder="Ваше имя">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" name="phone" required placeholder="Ваш телефон">
+                            </div>
+
+                            <div class="input-group">
+                                <input type="submit" class="btn btn-md btn-warning">
+                            </div>
+                            <div class="input-group"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="feedback top-line">
+    <h2 class="color-brand text-center text-uppercase block-header bold">отзывы наших клиентов</h2>
+
+    <div class="section-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="feedback-video-wrapper">
+                        <div class="embed-responsive embed-responsive-4by3 feedback-video">
+                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="feedback-video-wrapper">
+                        <div class="embed-responsive embed-responsive-4by3 feedback-video">
+                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="feedback-video-wrapper">
+                        <div class="embed-responsive embed-responsive-4by3 feedback-video">
+                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-text">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="feedback-article">
+
+                            <div class="a-header">
+                                Анатолий (г. Киев)
+                            </div>
+                            <span>
+                                «Заказал такое кресло в Киевском офисе компании US-Medica после того, как опробовал его в Японии на выставке. Теперь это любимое кресло в моем доме и первый помощник в вопросе снятия стресса после рабочего дня. Спасибо за товар такого высокого уровня и качества!»
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feedback-article">
+
+                            <div class="a-header">
+                                Анатолий (г. Киев)
+                            </div>
+                            <span>
+                                «Заказал такое кресло в Киевском офисе компании US-Medica после того, как опробовал его в Японии на выставке. Теперь это любимое кресло в моем доме и первый помощник в вопросе снятия стресса после рабочего дня. Спасибо за товар такого высокого уровня и качества!»
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-audio">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="audio-wrapper">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <img class="img-responsive a-icon" src="img/audio.jpg" alt="a-icon">
+                                </div>
+                                <div class="col-xs-10">
+                                    <span class="audio-header">Аудиоотзыв №1</span>
+                                    <audio class="a-f" src="audio/lenigrad-rigton.mp3" controls></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="audio-wrapper">
+                            <div class="col-xs-2 ">
+                                <img class="img-responsive a-icon" src="img/audio.jpg" alt="a-icon">
+                            </div>
+                            <div class="col-xs-10">
+                                <span class="audio-header">Аудиоотзыв №2</span>
+                                <audio class="a-f" src="audio/lenigrad-rigton.mp3" controls></audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="audio-wrapper">
+                            <div class="col-xs-2 ">
+                                <img class="img-responsive a-icon" src="img/audio.jpg" alt="a-icon">
+                            </div>
+                            <div class="col-xs-10">
+                                <span class="audio-header">Аудиоотзыв №3</span>
+                                <audio class="a-f" src="audio/lenigrad-rigton.mp3" controls></audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="big-ribbon text-center">
+    <ul class="list-inline">
+        <li class="text-uppercase">есть вопросы? звоните</li>
+        <li>
+            <span class="text-nowrap">
+                +38 (066) 221 30 66
+            </span>
+            <span class="text-nowrap">
+                +38 (068) 861 22 83
+            </span>
+        </li>
+        <li>
+            <button class="btn btn-lg btn-warning">ЗАКАЗАТЬ ЗВОНОК</button>
+        </li>
+    </ul>
+</div>
+<div class="video-review">
+    <h2 class="color-brand text-center text-uppercase block-header bold">
+        <img class="hidden-xs" src="img/video-icon.png" alt="icon">
+        видеообзор наших кресел</h2>
+
+    <div class="container">
+        <div class="review-body">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="text-wrapper">
+                        <div class="review-header">
+                            МАССАЖНОЕ КРЕСЛО TAI JI
+                        </div>
+                        <span>
+                            До появления этого массажного кресла клиенту приходилось выбирать: что лучше - массажное кресло с "коротким", прямым массажным механизмом, но хорошим вытягиванием позвоночника (как, например, массажное кресло iRobo IV) или массажное кресло с L-образным механизмом и отличным роликовым массажем ягодиц, но не настолько классное вытягивание (массажное кресло Linkor).Теперь есть универсальное решение, которое охватывает сразу два варианта функций в их лучшей возможной реализации. Массажное кресло Rio - впервые LS-образный массажный механизм и вытягивание позвоночника существуют вместе, не ущемляя права друг друга!!!
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-review-group">
+                <div class="row">
+                    <div class="col-sm-7 text-right">
+                        <span class="btn btn-lg btn-clear pointer-none"><del>317 000 грн</del></span>
+                        <span class="btn btn-lg btn-primary pointer-none">294 000 грн</span>
+                    </div>
+                    <div class="col-sm-5">
+                        <button class="btn btn-lg btn-warning video-order">ЗАКАЗАТЬ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="cert-block">
+    <div class="header-ribbon">
+        <h2 class="text-center text-uppercase block-header bold color-white">
+            наши сертификаты
+        </h2>
+    </div>
+    <div class="section-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <img src="img/cert_b1.jpg" class="img-responsive cert-big block-centered" alt="certificate">
+                </div>
+                <div class="col-xs-4">
+                    <img src="img/cert_b2.jpg" class="img-responsive cert-big block-centered" alt="certificate">
+                </div>
+                <div class="col-xs-4">
+                    <img src="img/cert_b3.jpg" class="img-responsive cert-big block-centered" alt="certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ribbon primary"></div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="f-wrapper">
+                    <form class=" form footer-form" id="footerForm">
+                        <input type="hidden" name="head" value="Top form">
+
+                        <div class="input-group">
+                            <input type="text" name="name" required placeholder="Ваше имя">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone" required placeholder="Ваш телефон">
+                        </div>
+
+                        <div class="input-group last">
+                            <input type="submit" class="btn btn-md btn-warning " value="ЗАКАЗАТЬ">
+                        </div>
+                        <div class="input-group"></div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="f-wrapper">
+                    <div class="slogan color-brand text-uppercase">ЛУЧШИЕ В УКРАИНЕ
+                        массажные кресла
+                        продаются здесь!
+                    </div>
+                    <ul class="list-unstyled phone-bottom-block color-white">
+                        <li class="text-nowrap">+38 (066) 221 30 66</li>
+                        <li class="text-nowrap">+38 (068) 861 22 83</li>
+                    </ul>
+
+                    <button class="btn btn-warning btn-md" data-toggle="modal"
+                            data-target="#orderModal">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade feedback-modal" id="orderModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+
+                <h2 class="modal-header color-primary">перезвоним за <br/> две минуты</h2>
+
+                <p class="text-center">Заполните форму и мы свяжемся с вами</p>
+
+                <form id="requestForm" class="text-center form">
+                    <input name="formtitle" type="hidden" value="Order"/>
+
+                    <div class="input-group">
+                        <input name="name" class="name_input" type="text" required
+                               placeholder="Введите имя"/>
+                    </div>
+                    <div class="input-group">
+                        <input name="phone" class="name_input" type="text" required
+                               placeholder="Введите телефон"/>
+                    </div>
+
+                    <input type="submit" class="btn btn-lg btn-info"/>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
@@ -61,9 +645,14 @@
 <!--{{CUT-START}}-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+<!--<script src="assets/js/transition.js"></script>
+<script src="assets/js/modal.js"></script>
+<script src="assets/js/collapse.js"></script>-->
+<script src="js/vendor/bootstrap.min.js"></script>
 <!--{{CUT-END}}-->
 
 
+<script src="js/{{MAIN_JS_FILE}}"></script>
 <script src="js/plugins.js"></script>
 <!--<script src="js/main.js"></script>-->
 

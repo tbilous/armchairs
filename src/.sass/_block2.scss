@@ -1,0 +1,285 @@
+//BLOCK-2 TAI-JI
+.block {
+    position: relative;
+    margin-top: 5em;
+    min-height: 40em;
+    @media all and (max-width: $screen-phone) {
+        min-height: 32em;
+    }
+
+    .chair-header {
+        position: absolute;
+        top: 5%;
+        color: white;
+        margin-left: -5%;
+        @media all and (max-width: $screen-md-max) {
+            font-size: 1.5em;
+        }
+        @media all and (max-width: $screen-phone) {
+            font-size: 1.2em;
+            margin-left: 0;
+        }
+    }
+    &.block3 {
+
+        .chair-header {
+            right: 5%;
+            margin-left: 0;
+            @media all and (max-width: $screen-phone) {
+                right: 0;
+            }
+        }
+    }
+}
+
+.block-bg {
+    background: url("../img/tai-ji-bg-notext.jpg") center no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 0;
+    background-size: cover;
+    &.block-3-bg {
+        background: url("../img/tai-ji-bg-right-notext.jpg") center no-repeat;
+        background-size: cover;
+    }
+}
+
+.stars {
+    width: 45%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.chair-photo {
+    margin-top: 4em;
+    position: absolute;
+}
+
+.block2-list {
+    margin-top: 25%;
+    list-style: none;
+    color: white;
+    font-size: 1.2em;
+
+    @media all and (max-width: $screen-sm-max) {
+        font-size: 1em;
+    }
+    li {
+        padding: .5em 0;
+        position: relative;
+        &:before {
+            content: '';
+            width: 1.2em;
+            height: 1.2em;
+            background: url("../img/star.png") no-repeat;
+            background-size: contain;
+            //content: url("../img/star.png");
+            position: absolute;
+            left: -2em;
+        }
+    }
+}
+
+.order-group {
+    max-width: 326px;
+    .order-button {
+        width: 100%;
+        margin-top: 1em;
+    }
+    .price {
+        font-size: 1.5em;
+    }
+
+}
+
+.order {
+    padding-bottom: 5em;
+}
+
+.why {
+    padding: 3em 0 5em;
+    .section-body {
+        margin-top: 1em;
+        li {
+            margin-top: 2.5em;
+        }
+    }
+    .icon {
+        width: 6em;
+        height: 6em;
+        background: no-repeat center;
+        background-size: contain;
+        margin: 0 auto 2em;
+        &.watch {
+            background-image: url("../img/watch.jpg");
+        }
+        &.service {
+            background-image: url("../img/service.jpg");
+        }
+        &.finger {
+            background-image: url("../img/finger.jpg");
+        }
+        &.cert {
+            background-image: url("../img/cert.jpg");
+        }
+        &.track {
+            background-image: url("../img/track.jpg");
+        }
+    }
+    .offer {
+        margin-top: 4em;
+    }
+    .action-wrapper {
+        margin-top: 1em;
+    }
+    .action-ribbon {
+        background: url("../img/hoover-rebbon2.png") no-repeat left top;
+    }
+    .action-text {
+        background-color: transparent;
+    }
+}
+
+.block-header {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feedback {
+    padding: 3em 0;
+    .section-body {
+        margin-top: 4em;
+    }
+    .feedback-video-wrapper {
+        max-width: 240px;
+        margin: 0 auto 2em;
+    }
+    .feedback-text {
+        margin-top: 4em;
+    }
+    .a-header {
+        color: $brand-primary;
+        margin-bottom: 1em;
+        font-size: 1.6em;
+    }
+    .feedback-article {
+        padding-left: 7em;
+        position: relative;
+        &::before {
+            content: '';
+            width: 6em;
+            height: 6em;
+            position: absolute;
+            left: 0;
+            background: url("../img/ava.png") center;
+            background-size: cover;
+        }
+    }
+    .feedback-audio {
+        padding-top: 1em;
+        margin-top: 4em;
+    }
+    .audio-header {
+        margin-bottom: 1em;
+        display: inline-block;
+    }
+    .a-icon {
+        margin-top: 2.5em;
+        margin-left: 1em;
+    }
+    .a-f {
+        max-width: 100%;
+    }
+}
+.big-ribbon {
+    color: white;
+    background-color: $brand-primary;
+    padding: 2em 0 1em;
+    li{
+        padding: 0 1em;
+        vertical-align: middle;
+        &:nth-child(1){
+            font-size: 2.2em;
+        }
+        &:nth-child(2){
+            font-size: 1.2em;
+            span{
+                display: flex;
+            }
+        }
+        &:nth-child(3){
+            font-size: 1.2em;
+            .btn{
+              width: 100%;
+            }
+        }
+    }
+}
+.video-review{
+    padding: 3em 0;
+    .block-header{
+        img{
+            margin-right: 2em;
+        }
+    }
+    .review-body{
+        padding-top: 4em;
+    }
+    .review-header{
+        font-size: 1.2em;
+        color: $brand-primary;
+        margin-bottom: 1em;
+    }
+    .text-wrapper{
+        padding-left: 15%;
+    }
+    .btn-clear{
+        border: none;
+        box-shadow: none;
+    }
+    .btn-review-group{
+        paddin: 2em 0;
+    }
+    .btn{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .video-order{
+        margin-left: 15%;
+        width: 80%;
+    }
+}
+.cert-block{
+    background: url("../img/cert-block-bg.jpg") center no-repeat;
+    background-size: cover;
+    padding: 3em 0;
+    .header-ribbon{
+        padding: 2em 0;
+        background-color: $brand-primary;
+    }
+    .section-body{
+        padding: 5em 2em ;
+    }
+}
+.footer{
+    background-color: #574753;
+    padding: 3em 0;
+    .f-wrapper{
+        max-width:280px;
+        margin: 0 auto;
+        .btn{
+            width: 100%;
+        }
+    }
+    .phone-bottom-block, .slogan{
+        font-size: 1.6em;
+    }
+    .footer-form{
+        background-color: transparent;
+        padding: 0;
+    }
+    .last{
+        margin-top: 2.6em;
+    }
+}
