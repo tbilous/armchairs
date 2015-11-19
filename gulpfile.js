@@ -133,7 +133,7 @@ gulp.task('copy:minify-css', function () {
 gulp.task('copy:uglify', function() {
     return gulp.src([
             dirs.src + '/assets/js/*.js',
-            '!' + dirs.src + '/assets/js/' + mainStylesheet + '*.min.js'
+            '!' + dirs.src + '/assets/js/*.min.js'
         ])
 
         .pipe(uglify('main.js', {

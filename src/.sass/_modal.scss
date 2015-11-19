@@ -2,6 +2,14 @@
     @media screen and (max-width: $screen-sm-min) {
         font-size: 10px;
     }
+    .close{
+        background-color: transparent;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-weight: 700;
+        border-radius: 50%;
+    }
     .modal-header {
         opacity: .8;
         font-size: 3em;
@@ -59,6 +67,11 @@
 
     .message {
         resize: none;
+
+    }
+    .form{
+        background-color: transparent;
+        max-width: 100%;
 
     }
 }

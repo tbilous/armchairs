@@ -42,7 +42,8 @@
                             <li class="text-nowrap">+38 (066) 221 30 66</li>
                             <li class="text-nowrap">+38 (068) 861 22 83</li>
                             <li>
-                                <button class="btn btn-md btn-clear start-modal">ЗАКАЗАТЬ ЗВОНОК</button>
+                                <button class="btn btn-md btn-clear start-modal" data-toggle="modal"
+                                        data-target="#orderModal">ЗАКАЗАТЬ ЗВОНОК</button>
                             </li>
                         </ul>
                     </div>
@@ -165,7 +166,8 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-lg btn-clear order-button">ЗАКАЗАТЬ</button>
+                    <button class="btn btn-lg btn-clear order-button" data-toggle="modal"
+                            data-target="#orderModal">ЗАКАЗАТЬ</button>
                 </div>
             </div>
 
@@ -223,7 +225,8 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-lg btn-clear order-button">ЗАКАЗАТЬ</button>
+                    <button class="btn btn-lg btn-clear order-button" data-toggle="modal"
+                            data-target="#orderModal">ЗАКАЗАТЬ</button>
                 </div>
             </div>
 
@@ -280,7 +283,8 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-lg btn-clear order-button">ЗАКАЗАТЬ</button>
+                    <button class="btn btn-lg btn-clear order-button" data-toggle="modal"
+                            data-target="#orderModal">ЗАКАЗАТЬ</button>
                 </div>
             </div>
 
@@ -498,7 +502,8 @@
             </span>
         </li>
         <li>
-            <button class="btn btn-lg btn-warning">ЗАКАЗАТЬ ЗВОНОК</button>
+            <button class="btn btn-lg btn-warning" data-toggle="modal"
+                    data-target="#orderModal">ЗАКАЗАТЬ ЗВОНОК</button>
         </li>
     </ul>
 </div>
@@ -533,7 +538,8 @@
                         <span class="btn btn-lg btn-primary pointer-none">294 000 грн</span>
                     </div>
                     <div class="col-sm-5">
-                        <button class="btn btn-lg btn-warning video-order">ЗАКАЗАТЬ</button>
+                        <button class="btn btn-lg btn-warning video-order" data-toggle="modal"
+                                data-target="#orderModal">ЗАКАЗАТЬ</button>
                     </div>
                 </div>
             </div>
@@ -645,13 +651,11 @@
 <!--{{CUT-START}}-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-<!--<script src="assets/js/transition.js"></script>
-<script src="assets/js/modal.js"></script>
-<script src="assets/js/collapse.js"></script>-->
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <!--{{CUT-END}}-->
 
-
+<script src="js/vendor/flipclock.min.js"></script>
+<script src="js/vendor/moment.min.js"></script>
 <script src="js/{{MAIN_JS_FILE}}"></script>
 <script src="js/plugins.js"></script>
 <!--<script src="js/main.js"></script>-->

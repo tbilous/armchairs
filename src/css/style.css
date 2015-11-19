@@ -5290,6 +5290,14 @@ h1, h2, h3, h4, h5 {
     font-size: 10px;
   }
 }
+.feedback-modal .close {
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: 700;
+  border-radius: 50%;
+}
 .feedback-modal .modal-header {
   opacity: .8;
   font-size: 3em;
@@ -5342,6 +5350,10 @@ h1, h2, h3, h4, h5 {
 }
 .feedback-modal .message {
   resize: none;
+}
+.feedback-modal .form {
+  background-color: transparent;
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
