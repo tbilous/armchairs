@@ -114,10 +114,11 @@
     .clock-header {
         color: $brand-primary;
         font-size: 1.2em;
+        margin-bottom: 1em;
+        display: inline-block;
     }
     .clock {
     }
-    background-color: lightcyan;
     @media (max-width: $screen-md-min) {
         margin: 0 auto;
     }

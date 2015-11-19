@@ -4919,11 +4919,12 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   padding: .5em 0;
   min-height: 150px;
-  background-color: lightcyan;
 }
 .clock-wrapper .clock-header {
   color: #f7941d;
   font-size: 1.2em;
+  margin-bottom: 1em;
+  display: inline-block;
 }
 @media (max-width: 760px) {
   .clock-wrapper {
@@ -5354,6 +5355,373 @@ h1, h2, h3, h4, h5 {
 .feedback-modal .form {
   background-color: transparent;
   max-width: 100%;
+}
+
+.flip-clock-wrapper {
+  text-align: center;
+  position: relative;
+  width: 322px;
+  margin: 0 auto;
+}
+.flip-clock-wrapper * {
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.flip-clock-wrapper a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ccc;
+}
+.flip-clock-wrapper a:hover {
+  color: #fff;
+}
+.flip-clock-wrapper ul {
+  list-style: none;
+  position: relative;
+  float: left;
+  margin: 2px;
+  width: 46px;
+  height: 78px;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: transparent;
+  padding: 0;
+}
+.flip-clock-wrapper ul li {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none !important;
+}
+.flip-clock-wrapper ul li:first-child {
+  z-index: 2;
+}
+.flip-clock-wrapper ul li a {
+  display: block;
+  height: 100%;
+  -webkit-perspective: 200px;
+          perspective: 200px;
+  margin: 0 !important;
+  overflow: visible !important;
+  cursor: default !important;
+  border-radius: 6px;
+}
+.flip-clock-wrapper ul li a div {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  font-size: 80px;
+  overflow: hidden;
+  outline: 1px solid transparent;
+}
+.flip-clock-wrapper ul li a div .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.flip-clock-wrapper ul li a div.up {
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  top: 0;
+  background: url("../img/flip/top-half.png");
+  background-size: cover;
+}
+.flip-clock-wrapper ul li a div.up:after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 3px;
+}
+.flip-clock-wrapper ul li a div.up div.inn {
+  top: 0;
+}
+.flip-clock-wrapper ul li a div.down {
+  -webkit-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  bottom: 0;
+  /*                        border-bottom-left-radius: 6px;
+                          border-bottom-right-radius: 6px;*/
+  background: url("../img/flip/bottom-half.png");
+  background-size: cover;
+}
+.flip-clock-wrapper ul li a div.down div.inn {
+  bottom: 0;
+}
+.flip-clock-wrapper ul li a div div.inn {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 200%;
+  color: #ccc;
+  text-shadow: 0 1px 2px #000;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 6px;
+  font-size: 44px;
+  line-height: 78px;
+}
+.flip-clock-wrapper ul li.flip-clock-active {
+  z-index: 3;
+}
+.flip-clock-wrapper ul.play li.flip-clock-before {
+  z-index: 3;
+}
+.flip-clock-wrapper ul.play li.flip-clock-before .up {
+  z-index: 2;
+  -webkit-animation: turn2 0.5s linear both;
+          animation: turn2 0.5s linear both;
+}
+.flip-clock-wrapper ul.play li.flip-clock-before .up .shadow {
+  background: linear, top, rgba(0, 0, 0, 0.1) 0, #000 100%;
+  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0, #000 100%;
+  -webkit-animation: show 0.5s linear both;
+          animation: show 0.5s linear both;
+}
+.flip-clock-wrapper ul.play li.flip-clock-before .down .shadow {
+  background: linear, top, #000 0, rgba(0, 0, 0, 0.1) 100%;
+  background: linear, to bottom, #000 0, rgba(0, 0, 0, 0.1) 100%;
+  -webkit-animation: show 0.5s linear both;
+          animation: show 0.5s linear both;
+}
+.flip-clock-wrapper ul.play li.flip-clock-active {
+  -webkit-animation: asd 0.5s 0.5s linear both;
+          animation: asd 0.5s 0.5s linear both;
+  z-index: 5;
+}
+.flip-clock-wrapper ul.play li.flip-clock-active .down {
+  z-index: 2;
+  -webkit-animation: turn 0.5s 0.5s linear both;
+          animation: turn 0.5s 0.5s linear both;
+}
+.flip-clock-wrapper ul.play li.flip-clock-active .down .shadow {
+  background: linear, top, #000 0, rgba(0, 0, 0, 0.1) 100%;
+  background: linear, to bottom, #000 0, rgba(0, 0, 0, 0.1) 100%;
+  -webkit-animation: hide 0.5s 0.2s linear both;
+          animation: hide 0.5s 0.2s linear both;
+}
+.flip-clock-wrapper ul.play li.flip-clock-active .up .shadow {
+  background: linear, top, rgba(0, 0, 0, 0.1) 0, #000 100%;
+  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0, #000 100%;
+  -webkit-animation: hide 0.5s 0.3s linear both;
+          animation: hide 0.5s 0.3s linear both;
+}
+.flip-clock-wrapper.clearfix {
+  *zoom: 1;
+}
+.flip-clock-wrapper.clearfix:before {
+  content: " ";
+  display: table;
+}
+.flip-clock-wrapper.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.flip-clock-wrapper:before {
+  content: " ";
+  display: table;
+}
+.flip-clock-wrapper:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.flip-clock-meridium {
+  background: none !important;
+  font-size: 36px !important;
+}
+.flip-clock-meridium a {
+  color: #313333;
+}
+
+.flip-clock-divider {
+  float: left;
+  display: inline-block;
+  position: relative;
+  width: 10px;
+  height: 110px;
+}
+.flip-clock-divider:first-child {
+  width: 0;
+}
+.flip-clock-divider .flip-clock-label {
+  position: absolute;
+  bottom: 4px;
+  right: -86px;
+  color: #000;
+  text-shadow: none;
+  font-size: 17px;
+}
+.flip-clock-divider.minutes .flip-clock-label {
+  right: -88px;
+}
+.flip-clock-divider.seconds .flip-clock-label {
+  right: -91px;
+}
+
+.flip-clock-dot {
+  display: block;
+  background: #2b3339;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  visibility: hidden;
+  border-radius: 50%;
+  left: 5px;
+}
+.flip-clock-dot.top {
+  top: 25px;
+}
+.flip-clock-dot.bottom {
+  top: 45px;
+}
+
+@-webkit-keyframes asd {
+  0% {
+    z-index: 2;
+  }
+  20% {
+    z-index: 4;
+  }
+  100% {
+    z-index: 4;
+  }
+}
+@keyframes asd {
+  0% {
+    z-index: 2;
+  }
+  20% {
+    z-index: 4;
+  }
+  100% {
+    z-index: 4;
+  }
+}
+@-webkit-keyframes turn {}
+@keyframes turn {
+  0% {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes turn2 {}
+@keyframes turn2 {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hours .flip-clock-label {
+  right: -82px;
+}
+
+.flip-clock-wrapper {
+  display: block;
+  /*    @media screen and (max-width: 400px) {
+          margin: 0;
+          .flip-clock-divider {
+              width: 11px;
+              left: -3px;
+              &.hours {
+                  display: none;
+              }
+  
+          }
+      }*/
+}
+
+.flip {
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+.flip .inn {
+  /*        &::before {
+              content: url("../img/flip/flip-clock-line.png");
+              display: block;
+              position: absolute;
+              bottom: 18px;
+          }*/
+  background-image: url("../img/flip/flip-bg-white.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.flip::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -3px;
+  height: 78px;
+  width: 46px;
+  background: url("../img/flip/flip-bg-white.png") center;
+  background-size: contain;
+  border-radius: 5px;
+}
+
+.flip-clock-divider.minutes .flip-clock-label {
+  right: -70px;
+}
+.flip-clock-divider.hours .flip-clock-label {
+  right: -66px;
+}
+.flip-clock-divider.seconds .flip-clock-label {
+  right: -71px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -659,7 +659,27 @@
 <script src="js/{{MAIN_JS_FILE}}"></script>
 <script src="js/plugins.js"></script>
 <!--<script src="js/main.js"></script>-->
+<script>
+    //CLOCK
+    var tomorrow = moment().endOf('day').valueOf() + 1;
+    var now = moment().valueOf();
+    var interval = (tomorrow - now) / 1000;
+    var clock = $('#topClock').FlipClock(interval, {
+        clockFace: 'HourlyCounter',
+        countdown: false,
+        language: 'ru',
+        showSeconds: true
+    });
+/*
+    var clockTop = $('.clock-top').FlipClock(interval, {
+        clockFace: 'HourlyCounter',
+        countdown: true,
+        language: 'ru',
+        showSeconds: false
+    });
+*/
 
+</script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <!--        <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -1,0 +1,492 @@
+//colors
+$height: 78px;
+$color_celeste_approx: #ccc;
+$white: #fff;
+$color_mine_shaft_approx: #313333;
+$black: #000;
+$black_40: rgba(0, 0, 0, 0.4);
+$color_outer_space_approx: #2b3339;
+$black_10: rgba(0, 0, 0, 0.1);
+
+.flip-clock-wrapper {
+    text-align: center;
+    position: relative;
+    width: 322px;
+    //margin: 1em;
+    margin: 0 auto;
+    * {
+        //Instead of the line below you could use @include box-sizing($bs)
+        box-sizing: border-box;
+        //Instead of the line below you could use @include backface-visibility($visibility)
+        backface-visibility: hidden;
+    }
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: $color_celeste_approx;
+        &:hover {
+            color: $white;
+        }
+    }
+    ul {
+        list-style: none;
+        position: relative;
+        float: left;
+        margin: 2px;
+        width: 46px;
+        height: $height;
+        font-size: 40px;
+        font-weight: bold;
+        border-radius: 5px;
+        background: transparent;
+        padding: 0;
+        li {
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            //height: 97%;
+            height: 100%;
+            text-decoration: none !important;
+            &:first-child {
+                z-index: 2;
+            }
+            a {
+                display: block;
+                height: 100%;
+                perspective: 200px;
+                margin: 0 !important;
+                overflow: visible !important;
+                cursor: default !important;
+                border-radius: 6px;
+                div {
+                    z-index: 1;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 50%;
+                    font-size: 80px;
+                    overflow: hidden;
+                    outline: 1px solid transparent;
+                    .shadow {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                    }
+                    &.up {
+                        transform-origin: 50% 100%;
+                        top: 0;
+                        background: url("../img/flip/top-half.png");
+                        background-size: cover;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            top: 40px;
+                            left: 0;
+                            z-index: 5;
+                            width: 100%;
+                            height: 3px;
+                            //background-color: $black;
+                            //background-color: $black_40;
+                        }
+                        div.inn {
+                            top: 0;
+                        }
+                    }
+                    &.down {
+                        transform-origin: 50% 0;
+                        bottom: 0;
+/*                        border-bottom-left-radius: 6px;
+                        border-bottom-right-radius: 6px;*/
+                        background: url("../img/flip/bottom-half.png");
+                        background-size: cover;
+                        div.inn {
+                            bottom: 0;
+                        }
+                    }
+                    div.inn {
+                        position: absolute;
+                        left: 0;
+                        z-index: 1;
+                        width: 100%;
+                        height: 200%;
+                        color: $color_celeste_approx;
+                        text-shadow: 0 1px 2px $black;
+                        text-align: center;
+                        //background-color: $color_mine_shaft_approx;
+                        background-color: transparent;
+                        border-radius: 6px;
+                        font-size: 44px;
+                        line-height: $height;
+                    }
+                }
+            }
+            &.flip-clock-active {
+                z-index: 3;
+            }
+        }
+        &.play li {
+            &.flip-clock-before {
+                z-index: 3;
+                .up {
+                    z-index: 2;
+                    animation: turn2 0.5s linear both;
+                    .shadow {
+                        background: linear, top, $black_10 0, $black 100%;
+                        background: linear, to bottom, $black_10 0, $black 100%;
+                        animation: show 0.5s linear both;
+                    }
+                }
+                .down .shadow {
+                    background: linear, top, $black 0, $black_10 100%;
+                    background: linear, to bottom, $black 0, $black_10 100%;
+                    animation: show 0.5s linear both;
+                }
+            }
+            &.flip-clock-active {
+                animation: asd 0.5s 0.5s linear both;
+                z-index: 5;
+                .down {
+                    z-index: 2;
+                    animation: turn 0.5s 0.5s linear both;
+                    .shadow {
+                        background: linear, top, $black 0, $black_10 100%;
+                        background: linear, to bottom, $black 0, $black_10 100%;
+                        animation: hide 0.5s 0.2s linear both;
+                    }
+                }
+                .up .shadow {
+                    background: linear, top, $black_10 0, $black 100%;
+                    background: linear, to bottom, $black_10 0, $black 100%;
+                    animation: hide 0.5s 0.3s linear both;
+                }
+            }
+        }
+    }
+    &.clearfix {
+        *zoom: 1;
+        &:before {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            content: " ";
+            display: table;
+            clear: both;
+        }
+    }
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+.flip-clock-meridium {
+    background: none !important;
+    //box-shadow: 0 0 0 !important;
+    font-size: 36px !important;
+    a {
+        color: $color_mine_shaft_approx;
+    }
+}
+
+.flip-clock-divider {
+    float: left;
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 110px;
+    &:first-child {
+        width: 0;
+    }
+    .flip-clock-label {
+        position: absolute;
+        bottom: 4px;
+        right: -86px;
+        color: $black;
+        //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        text-shadow: none;
+        font-size: 17px;
+    }
+    &.minutes .flip-clock-label {
+        right: -88px;
+    }
+    &.seconds .flip-clock-label {
+        right: -91px;
+    }
+}
+
+.flip-clock-dot {
+    display: block;
+    background: $color_outer_space_approx;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    visibility: hidden;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    left: 5px;
+    &.top {
+        top: 25px;
+    }
+    &.bottom {
+        top: 45px;
+    }
+}
+
+@-webkit-keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    20% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+@-moz-keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    20% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+@-o-keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    20% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+@keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    20% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+@-webkit-keyframes turn {
+    0% {
+    }
+    100% {
+    }
+}
+
+@-moz-keyframes turn {
+    0% {
+    }
+    100% {
+    }
+}
+
+@-o-keyframes turn {
+    0% {
+    }
+    100% {
+    }
+}
+
+@keyframes turn {
+    0% {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotateX(90deg);
+    }
+    100% {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotateX(0deg);
+    }
+}
+
+@-webkit-keyframes turn2 {
+    0% {
+    }
+    100% {
+    }
+}
+
+@-moz-keyframes turn2 {
+    0% {
+    }
+    100% {
+    }
+}
+
+@-o-keyframes turn2 {
+    0% {
+    }
+    100% {
+    }
+}
+
+@keyframes turn2 {
+    0% {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotateX(0deg);
+    }
+    100% {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotateX(-90deg);
+    }
+}
+
+@-webkit-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.hours .flip-clock-label {
+    right: -82px;
+}
+
+.flip-clock-wrapper {
+    display: block;
+/*    @media screen and (max-width: 400px) {
+        margin: 0;
+        .flip-clock-divider {
+            width: 11px;
+            left: -3px;
+            &.hours {
+                display: none;
+            }
+
+        }
+    }*/
+}
+
+.flip {
+    font-family: Arial, sans-serif;
+    position: relative;
+    .inn {
+/*        &::before {
+            content: url("../img/flip/flip-clock-line.png");
+            display: block;
+            position: absolute;
+            bottom: 18px;
+        }*/
+
+        background-image: url("../img/flip/flip-bg-white.png");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.flip::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -3px;
+    height: $height;
+    width: 46px;
+    background: url("../img/flip/flip-bg-white.png") center;
+    background-size: contain;
+    border-radius: 5px;
+}
+
+.flip-clock-divider {
+    &.minutes {
+        .flip-clock-label {
+            right: -70px;
+        }
+    }
+    &.hours {
+        .flip-clock-label {
+            right: -66px;
+        }
+    }
+    &.seconds {
+        .flip-clock-label {
+            right: -71px;
+        }
+    }
+}
